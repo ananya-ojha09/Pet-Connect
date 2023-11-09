@@ -1,0 +1,220 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    position: relative;
+    font-family: roboto, sans-serif;
+    background-color:#fff;
+}
+.navbar{
+    
+    width:100%;
+    height:100px;
+    position:fixed;
+    top:0;
+    left:0;
+    padding: 0 4%;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+}
+.ngo_logo{
+    height: 90px;
+}
+.nav_links{
+    margin: 10px;
+    display: flex;
+    list-style: none;
+}
+.nav_item a{
+    text-decoration: none;
+    margin-left: 20px;
+    text-transform: capitalize;
+    color: black;
+    opacity: 0.9;
+    border-bottom: solid palevioletred;
+}
+.right{
+    display: block;
+    margin-left: auto;
+}
+.search_box{
+    border: none;
+    border-bottom: 1px solid #aaa;
+    outline:none;
+    background: transparent;
+    height: 30px;
+    color: #fff;
+    width:250px;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.5s;
+}
+.search_box{
+    border-color: #1f80e0;
+    width: 400px;
+}
+.sign_button{
+    height: 50px;
+    color: black;
+    padding: 0 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    margin: 0 10px;
+    background-color: #fff;
+}
+.ngo_info{
+    margin-top: 100px;
+    text-align: center;
+    text-transform: capitalize;
+}
+.ngo_info h1{
+    text-decoration: underline;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.ngo_info P{
+    margin-top: 20px;
+}
+
+.ngo_info img{
+    height: 500px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    border: 5px solid #fff;
+
+}
+
+.about_ngo{
+    margin-top: 20px;
+    width: 50%;
+    align-items: center;
+    margin-left: 25%;
+    padding: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    font-family: Helvetica;
+}
+
+.donate{
+    align-items: center;
+    text-align: center;
+}
+.donate button{
+    text-transform: capitalize;
+    font-size: 20px;
+    color: #1a237e;
+    background-color: #fff;
+    align-items: center;
+    border-radius: 5px;
+    padding: 20px;
+    height: 70px;
+    width: 300px;
+    border: 5px solid #ff92a5;
+}
+.donate button:hover{
+    background-color: #ff92a5;
+    color: #fff;
+    
+
+}
+.donate_info{
+    margin-top: 50px;
+    font-size: 18px;
+    background-color: #cccccc;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: center;
+    padding: 50px;
+
+}
+.image_container{
+    position: relative;
+    width: 92%;
+    margin: auto;
+    height: 10vw;
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+.images{
+    position:relative;
+    min-width: calc(100% / 4 - 10px);
+    width: calc(100% / 4 - 10px);
+    height: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #ff92a5;
+}
+.image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.image:hover
+{
+    transform: scale(1.1);
+}
+.image.zoomed {
+    transform: scale(1.5);
+    z-index: 1;
+}
+.container{
+    width: auto;
+    margin-top: 5px;
+}
+.container h1{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+
+}
+.carousel-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel-slide {
+    display: none;
+}
+
+.carousel-slide img {
+    width: 100%;
+}
+
+button {
+    margin-top: 50px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.caption {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    color: #333;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+}

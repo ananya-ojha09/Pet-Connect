@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply to Join Animal NGO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 80px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #AA336A;
+        }
+
+        form {
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #AA336A;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #AA336A;
+        }
+    </style>
+</head>
+<body style="background-image: url('./HOMEBG.jpg'); background-size: cover; background-repeat: no-repeat;">
+    <div class="container">
+        <h1>Apply to Join Animal NGO</h1>
+        <form onsubmit="return validateForm();"method="post">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <label for="message">Why do you want to join us?</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <input type="submit" value="Submit Application">
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const p = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            phone=parseInt(p);
+
+            if (name === "" || email === "" || phone === "" || message === "") {
+                alert("Please fill out all fields");
+                return false;
+            }
+
+            if (!validateEmail(email)) {
+                alert("enter valid email address")
+                return false;
+            }
+
+            if (phone.length!=10) {
+                alert("enter valid phone number")
+                return false;
+            }
+            window.location.href = "nextpage.html";
+            return true;
+        }
+
+        function validateEmail(email) {
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return(email.match(emailPattern))
+        }
+    
+
+        function validatePhone(phone) {
+            var phonePattern = /[0-9]{10,10} $/;
+           
+            
+            return (phone.test(phonePattern));
+           }
+ 
+    </script> 
+
+</body>
+</html>

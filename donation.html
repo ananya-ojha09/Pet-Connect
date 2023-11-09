@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animal NGO Donation Form</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f7f7f7;
+        color: #333;
+
+    }
+
+    .container {
+        background-color: #fff;
+        max-width: 800px;
+        margin: 80px auto;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #AA336A;
+    }
+
+    form {
+        text-align: left;
+    }
+
+    label {
+        display: block;
+        margin: 10px 0;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    textarea {
+        width: 80%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        
+    }
+
+    input[type="submit"] {
+        background-color: #AA336A;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #AA336A;
+    }
+</style>
+</head>
+<body style="background-image: url('./HOMEBG.jpg'); background-size: cover; background-repeat: no-repeat;">
+    <div class="container">
+        <h1>Donate to Animal NGO</h1>
+        <form action="home.html" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="amount">Donation Amount :</label>
+            <input type="number" id="amount" name="amount" required>
+            
+            <label for="payment">Payment Method:</label>
+            <select id="payment" name="payment" required>
+                <option value="credit">Credit Card</option>
+                <option value="upi">UPI</option>
+                <option value="bank">Bank Transfer</option>
+            </select>
+            
+            <label for="message">Message (optional):</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+            
+            <input type="submit" value="Donate">
+        </form>
+        <script>
+            function validateForm() {
+                var name = document.getElementById("name").value;
+                var email = document.getElementById("email").value;
+                var amount = document.getElementById("amount").value;
+                var payment = document.getElementById("payment").value;
+        
+                if (name === "" || email === "" || amount === "" || payment === "") {
+                    alert("Please fill in all required fields.");
+                    return false;
+                }
+        
+                if (!validateEmail(email)) {
+                    alert("Please enter a valid email address.");
+                    return false;
+                }
+        
+                if (isNaN(amount) || amount <= 0) {
+                    alert("Please enter a valid donation amount.");
+                    return false;
+                }
+
+                if(!validateName(name)){
+                    return false;
+                }
+                return true;
+            }
+        
+            function validateEmail(email) {
+                var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                return(email.match(emailPattern))
+            }
+
+            function validateName(name){
+                return(name.match(/^[A-z]{3,7} [A-z]{3,7}$/))
+            }
+            document.querySelector("form").onsubmit = validateForm;
+        
+
+        </script>
+    
+    </div>
+</body>
+</html>
